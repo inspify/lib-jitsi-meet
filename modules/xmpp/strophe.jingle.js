@@ -41,7 +41,7 @@ export default class JingleConnectionPlugin extends ConnectionPlugin {
         this.jvbIceConfig = iceConfig.jvb;
         this.p2pIceConfig = iceConfig.p2p;
         this.mediaConstraints = {
-            offerToReceiveAudio: true,
+            offerToReceiveAudio: false,
             offerToReceiveVideo: true
         };
     }

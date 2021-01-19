@@ -108,7 +108,8 @@ export default class ProxyConnectionService {
         if (action === ACTIONS.INITIATE) {
             this._peerConnection = this._createPeerConnection(peerJid, {
                 isInitiator: false,
-                receiveVideo: true
+                receiveVideo: true,
+                receiveAudio: false
             });
         }
 
@@ -141,7 +142,8 @@ export default class ProxyConnectionService {
     start(peerJid, localTracks = []) {
         this._peerConnection = this._createPeerConnection(peerJid, {
             isInitiator: true,
-            receiveVideo: false
+            receiveVideo: false,
+            receiveAudio: false
         });
 
         this._peerConnection.start(localTracks);
