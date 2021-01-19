@@ -2631,7 +2631,10 @@ TraceablePeerConnection.prototype._createOfferOrAnswer = function(
         let oaPromise;
 
         if (isOffer) {
-            oaPromise = this.peerconnection.createOffer(constraints);
+            oaPromise = this.peerconnection.createOffer({
+              ...constraints,
+              offerToReceiveAudio: false
+            });
         } else {
             oaPromise = this.peerconnection.createAnswer(constraints);
         }
